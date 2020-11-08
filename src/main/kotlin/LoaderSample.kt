@@ -9,14 +9,13 @@ fun main(args: Array<String>) {
     val api = Api()
     val loader = Loader(api)
 
-    GlobalScope.launch {
+    val job = GlobalScope.launch {
         loader.load().collect {
             println(it)
         }
     }
-
-    Thread.sleep(1000)
-
+    
+    job.wait()
 }
 
 class Api {
