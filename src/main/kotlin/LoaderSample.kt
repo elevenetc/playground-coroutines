@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
             println(it)
         }
     }
-    
+
     job.wait()
 }
 
@@ -46,5 +46,3 @@ class Loader(val api: Api) {
         data class Result<T>(val result: T) : Item<T>()
     }
 }
-
-data class Data(val value: Int)
